@@ -13,14 +13,9 @@ defmodule FirebaseChatexWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", FirebaseChatexWeb do
-    pipe_through :browser
+  scope "/api/v1", FirebaseChatexWeb do
+    pipe_through :api
 
-    get "/", PageController, :index
+    get "/users", UserController, :index
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", FirebaseChatexWeb do
-  #   pipe_through :api
-  # end
 end

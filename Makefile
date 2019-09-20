@@ -45,3 +45,12 @@ deps.update:
 
 ecto.setup:
 	docker-compose run --rm firebase-chatex sh -c "mix ecto.setup"
+
+ecto.reset:
+	docker-compose run --rm firebase-chatex sh -c "mix ecto.reset"
+
+ecto.migrate:
+	docker-compose run --rm firebase-chatex sh -c "mix ecto.migrate"
+
+ecto.gen.migration:
+	docker-compose run --rm firebase-chatex sh -c "mix ecto.gen.migration ${file}"
